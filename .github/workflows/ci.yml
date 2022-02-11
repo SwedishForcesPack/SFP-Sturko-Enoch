@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build with HEMTT
+        uses: gruppe-adler/action-release-with-hemtt@2.2.0
+        id: build
+
+      - name: Upload built mod
+        uses: actions/upload-artifact@v2
+        with:
+          name: '@sfp_sturko_enoch'
+          path: ${{ steps.build.outputs.zip_path }}

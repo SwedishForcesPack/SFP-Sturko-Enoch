@@ -1,0 +1,8 @@
+name = "SFP Sturkö Enoch"
+prefix = "sfp_sturko_enoch"
+author = "Anrop"
+version = "1.0.0"
+files = [
+    "mod.cpp",
+    "sfp_logo_ca.paa",
+]
